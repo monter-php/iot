@@ -9,9 +9,13 @@ $(function() {
 function checkIp(ip) {
     $.ajax({
         url: "http://"+ip+"/ping",
-        timeout: 50,
+        timeout: 2000,
+        crossDomain : true,
+        xhrFields: {
+           withCredentials: false
+        },
         success: function(result) {
-            console.log(ip);
+            
         }
       })
 }
